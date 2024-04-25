@@ -13,6 +13,7 @@ class MyNote extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.dark,
+        useMaterial3: false,
       ),
       debugShowCheckedModeBanner: false,
       routes: {
