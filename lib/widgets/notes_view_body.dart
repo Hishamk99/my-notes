@@ -21,6 +21,9 @@ class NotesViewBody extends StatelessWidget {
             height: 16,
           ),
           CustomTextField(),
+          SizedBox(
+            height: 5,
+          ),
           ItemsListView(),
         ],
       ),
