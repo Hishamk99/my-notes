@@ -10,29 +10,34 @@ class AddNoteButtomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          CustomAddAndEditTextField(
-            text: 'title',
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          CustomAddAndEditTextField(
-            text: 'content',
-            maxLines: 5,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          CuttomButton(
-            onTap: () {},
-          ),
-        ],
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            const CustomAddAndEditTextField(
+              text: 'title',
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const CustomAddAndEditTextField(
+              text: 'content',
+              maxLines: 5,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            CuttomButton(
+              onTap: () {},
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+          ],
+        ),
       ),
     );
   }

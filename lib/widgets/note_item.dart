@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_notes/screen/edit_view.dart';
 
 import 'custom_icon_button.dart';
 
@@ -32,7 +33,8 @@ class NoteItem extends StatelessWidget {
                   color: Colors.black.withOpacity(.5),
                 ),
               ),
-              trailing: const CustomIconButton(
+              trailing: CustomIconButton(
+                onPressed: () {},
                 icon: Icons.delete,
               ),
             ),
@@ -41,11 +43,11 @@ class NoteItem extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const CustomIconButton(
-                      icon: Icons.edit,
-                    ),
+                  CustomIconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, EditPage.id);
+                    },
+                    icon: Icons.edit,
                   ),
                   const Text(
                     'april 26 , 2024',

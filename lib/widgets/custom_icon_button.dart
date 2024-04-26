@@ -4,7 +4,9 @@ class CustomIconButton extends StatelessWidget {
   const CustomIconButton({
     super.key,
     required this.icon,
+    required this.onPressed,
   });
+  final void Function()? onPressed;
 
   final IconData icon;
 
@@ -12,7 +14,7 @@ class CustomIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       padding: EdgeInsets.zero,
-      onPressed: () {},
+      onPressed: onPressed,
       icon: Icon(
         icon,
         color: Colors.black,

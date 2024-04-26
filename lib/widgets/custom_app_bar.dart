@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     super.key,
+    required this.icon,
   });
-
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -24,8 +25,8 @@ class CustomAppBar extends StatelessWidget {
           child: Center(
             child: IconButton(
               onPressed: () {},
-              icon: const Icon(
-                Icons.sort,
+              icon: Icon(
+                icon,
               ),
             ),
           ),

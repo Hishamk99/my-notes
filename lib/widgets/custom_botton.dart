@@ -12,7 +12,7 @@ class CuttomButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 40,
-        width: double.infinity,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.circular(12),
