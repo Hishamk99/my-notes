@@ -10,7 +10,13 @@ class NotesPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return const AddNoteButtomSheet();
+                });
+          },
           child: const Icon(
             Icons.add,
           ),
@@ -18,5 +24,14 @@ class NotesPage extends StatelessWidget {
         body: const NotesViewBody(),
       ),
     );
+  }
+}
+
+class AddNoteButtomSheet extends StatelessWidget {
+  const AddNoteButtomSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
