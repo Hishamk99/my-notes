@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_notes/widgets/custom_add_edit_text_field.dart';
 import 'package:my_notes/widgets/notes_view_body.dart';
 
 class NotesPage extends StatelessWidget {
@@ -12,13 +13,14 @@ class NotesPage extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             showModalBottomSheet(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                context: context,
-                builder: (context) {
-                  return const AddNoteButtomSheet();
-                });
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              context: context,
+              builder: (context) {
+                return const AddNoteButtomSheet();
+              },
+            );
           },
           child: const Icon(
             Icons.add,
@@ -35,6 +37,25 @@ class AddNoteButtomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 20,
+          ),
+          CustomAddAndEditTextField(
+            text: 'title',
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          CustomAddAndEditTextField(
+            text: 'content',
+            maxLines: 5,
+          ),
+        ],
+      ),
+    );
   }
 }

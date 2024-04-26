@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:my_notes/widgets/custom_app_bar.dart';
-import 'custom_text_field.dart';
+import 'custom_search_text_field.dart';
 import 'items_list_view.dart';
 
 class NotesViewBody extends StatelessWidget {
