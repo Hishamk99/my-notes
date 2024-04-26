@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:my_notes/widgets/custom_app_bar.dart';
 import 'custom_text_field.dart';
-import 'note_item.dart';
+import 'items_list_view.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
@@ -20,9 +21,7 @@ class NotesViewBody extends StatelessWidget {
             height: 16,
           ),
           CustomTextField(),
-          NoteItem(),
-          NoteItem(),
-          NoteItem(),
+          ItemsListView(),
         ],
       ),
     );
