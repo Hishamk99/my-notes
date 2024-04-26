@@ -4,15 +4,17 @@ class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     super.key,
     required this.icon,
+    required this.appTitle,
   });
   final IconData icon;
+  final String appTitle;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Text(
-          'Notes',
-          style: TextStyle(fontSize: 24),
+        Text(
+          appTitle,
+          style: const TextStyle(fontSize: 24),
         ),
         const Spacer(),
         Container(
