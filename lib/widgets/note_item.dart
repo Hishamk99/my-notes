@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:my_notes/cubits/notes_cubit/notes_cubit.dart';
-
 import 'package:my_notes/model/note_model.dart';
 import 'package:my_notes/screen/edit_view.dart';
 
+import 'alert_dialog_delete.dart';
 import 'custom_icon_button.dart';
 
 class NoteItem extends StatelessWidget {
@@ -39,8 +37,14 @@ class NoteItem extends StatelessWidget {
               ),
               trailing: CustomIconButton(
                 onPressed: () {
-                  note.delete();
-                  BlocProvider.of<NotesCubit>(context).getAllNotes();
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialogWidget(
+                        note: note,
+                      );
+                    },
+                  );
                 },
                 icon: Icons.delete,
               ),
