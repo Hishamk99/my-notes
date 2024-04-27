@@ -10,29 +10,31 @@ class EditViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
-              CustomAppBar(
+              const CustomAppBar(
                 appTitle: 'Edit Note',
                 icon: Icons.check,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
-              CustomAddAndEditTextField(
+              CustomAddAndEditTextFormField(
+                onSaved: (val) {},
                 text: 'title',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
-              CustomAddAndEditTextField(
+              CustomAddAndEditTextFormField(
+                onSaved: (val) {},
                 text: 'content',
                 maxLines: 5,
               ),
