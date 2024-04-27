@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_notes/model/note_model.dart';
 import 'package:my_notes/widgets/edit_view_body.dart';
 
 class EditPage extends StatelessWidget {
@@ -8,6 +9,9 @@ class EditPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const EditViewBody();
+    NoteModel note = ModalRoute.of(context)!.settings.arguments as NoteModel;
+    return EditViewBody(
+      note: note,
+    );
   }
 }

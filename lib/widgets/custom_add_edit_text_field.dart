@@ -5,10 +5,12 @@ class CustomAddAndEditTextFormField extends StatelessWidget {
     super.key,
     required this.text,
     this.maxLines = 1,
-    required this.onSaved,
+    this.onSaved,
+    this.onChanged,
   });
   final String text;
   final int maxLines;
+  final void Function(String)? onChanged;
   final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,7 @@ class CustomAddAndEditTextFormField extends StatelessWidget {
         }
         return null;
       },
+      onChanged: onChanged,
       onSaved: onSaved,
       maxLines: maxLines,
       cursorColor: Colors.grey,

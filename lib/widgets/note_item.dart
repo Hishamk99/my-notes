@@ -56,7 +56,8 @@ class NoteItem extends StatelessWidget {
                 children: [
                   CustomIconButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, EditPage.id);
+                      Navigator.pushNamed(context, EditPage.id,
+                          arguments: note);
                     },
                     icon: Icons.edit,
                   ),

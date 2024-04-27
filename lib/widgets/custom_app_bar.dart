@@ -5,9 +5,11 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     required this.icon,
     required this.appTitle,
+    required this.onPressed,
   });
   final IconData icon;
   final String appTitle;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -26,7 +28,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           child: Center(
             child: IconButton(
-              onPressed: () {},
+              onPressed: onPressed,
               icon: Icon(
                 icon,
               ),
