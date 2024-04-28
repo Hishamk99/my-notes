@@ -26,4 +26,19 @@ class NotesCubit extends Cubit<NotesState> {
     notesList = notesList!.reversed.toList();
     emit(NotesSuccess());
   }
+
+  getSearchedNotes(String title) {
+    List<NoteModel> searchedNotes = [];
+    for (int i = 0; i < notesList!.length; i++) {
+      if (notesList![i].title.contains(title)) {
+        searchedNotes.add(notesList![i]);
+      }
+    }
+    if (title.isNotEmpty) {
+      notesList = searchedNotes;
+    } else {
+      getAllNotes();
+    }
+    emit(NotesSuccess());
+  }
 }
