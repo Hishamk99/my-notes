@@ -29,7 +29,9 @@ class _NotesViewBodyState extends State<NotesViewBody> {
             height: 12,
           ),
           CustomAppBar(
-            onPressed: () {},
+            onPressed: () {
+              BlocProvider.of<NotesCubit>(context).getReversedNotes();
+            },
             appTitle: 'Notes',
             icon: Icons.sort,
           ),

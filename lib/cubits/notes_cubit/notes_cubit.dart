@@ -21,4 +21,9 @@ class NotesCubit extends Cubit<NotesState> {
     //  emit(NotesFailure(errorMessage: e.toString()));
     // }
   }
+
+  getReversedNotes() {
+    notesList = notesList!.reversed.toList();
+    emit(NotesSuccess());
+  }
 }
